@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Board
 {   
     public static final int GO_SQUARE = 0;
-    private static final int SIZE = 40;    
+    private static final int SIZE = 38;    
     
     private Square[] squares;
     private HashMap<Integer,Player> owners;
@@ -85,7 +85,7 @@ public class Board
          * from GO_SQUARE, and that the square numbered "n" is stored
          * in squares[n]. See buildSquares().
          */
-        int i = (aSquare.getNumber() + distance) % SIZE;
+        int i = (aSquare.getNumber() + distance) % (SIZE);
         return squares[i]; 
     }
 
