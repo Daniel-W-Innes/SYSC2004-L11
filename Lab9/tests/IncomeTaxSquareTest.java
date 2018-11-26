@@ -24,7 +24,7 @@ public class IncomeTaxSquareTest {
     @Test
     public void testLandOnMinimum() {
         Player p = new Player("purple", null);  // Don't need Square for testing
-        IncomeTaxSquare instance = new IncomeTaxSquare(0);    // Any number is fine.
+        IncomeTaxSquare instance = new IncomeTaxSquare(200);    // Any number is fine.
         try {
             instance.landOn(p);
         } catch(BankruptException e) { 
@@ -39,7 +39,7 @@ public class IncomeTaxSquareTest {
     public void testLandOnMaximum() {
         Player p = new Player("purple", null);  // Don't need Square for testing
         p.increaseCash(3000);
-        IncomeTaxSquare instance = new IncomeTaxSquare(0);    // Any number is fine.
+        IncomeTaxSquare instance = new IncomeTaxSquare(200);    // Any number is fine.
         try {
             instance.landOn(p);
         } catch(BankruptException e) { 

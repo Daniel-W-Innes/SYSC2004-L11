@@ -49,7 +49,7 @@ public class Board
         squares[i] = new PropertySquare( "Barrington Street", i++, commonPrice, commonRent);
         squares[i] = new PropertySquare( "Spring Garden Road", i++, commonPrice, commonRent);
         squares[i] = new PropertySquare( "Ontario Northland", i++, commonPrice, commonRent);
-         squares[i] = new PropertySquare( "Rue St-Jean", i++, commonPrice, commonRent);
+        squares[i] = new PropertySquare( "Rue St-Jean", i++, commonPrice, commonRent);
         squares[i] = new PropertySquare( "Community Chest", i++, commonPrice, commonRent);
         squares[i] = new PropertySquare( "Rue Ste-Catherine", i++, commonPrice, commonRent);
         squares[i] = new PropertySquare( "Rue St-Jacques", i++, commonPrice, commonRent);

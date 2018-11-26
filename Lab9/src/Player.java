@@ -1,7 +1,6 @@
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
+import java.util.Observable;
 
-public class Player implements Comparable<Object>,Observable {
+public class Player extends Observable implements Comparable<Object>{
 	private String name;
 	private Square location;
 	private int cash;
@@ -22,6 +21,8 @@ public class Player implements Comparable<Object>,Observable {
 
 	public void setLocation(Square location) {
 		this.location = location;
+		setChanged();
+		notifyObservers();
 	}
 
 	public int getCash() {
@@ -34,28 +35,22 @@ public class Player implements Comparable<Object>,Observable {
 
 	public void increaseCash(int amount) {
 		cash += amount;
-	}
+		setChanged();
+		notifyObservers();
+	}	
 
 	public void decreaseCash(int amount) throws BankruptException {
 		cash -= amount;
 		if (cash<0) {
+			cash = 0;
 			throw new BankruptException(-cash);
 		}
+		setChanged();
+		notifyObservers();
 	}
 
 	@Override
 	public int compareTo(Object o) {
 		return Integer.compare(netWorth(), ((Player) o).netWorth());
 	}
-
-	@Override
-	public void addListener(InvalidationListener arg0) {
-		
-	}
-
-	@Override
-	public void removeListener(InvalidationListener arg0) {
-
-	}
-
 }
